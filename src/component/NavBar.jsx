@@ -8,7 +8,7 @@ const NavBar = () => {
 
     return (
         <div>
-            <nav className='flex items-center py-[20px] justify-between border-b border-black'>
+            <nav className='flex items-center py-[20px] justify-between'>
                 <h1 className='cursor-pointer flex flex-col items-center font-bold text-red-400'>QuickBite <p>Eat your Cravings</p></h1>
                 <div className='flex gap-[20px] text-[#49557e] text-[18px]'>
                     <NavLink to='/'>
