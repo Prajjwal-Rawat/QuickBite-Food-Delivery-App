@@ -25,7 +25,7 @@ const NavBar = () => {
                     </NavLink>
                 </div>
 
-                <div className='flex gap-[40px] items-center'>
+                <div className='flex gap-[40px] items-center cursor-pointer'>
                     <img src={assets.search_icon} />
                     <div className='relative'>
                         <img src={assets.basket_icon} />
