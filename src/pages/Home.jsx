@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Header from '../component/Header'
 import ExploreMenu from '../component/ExploreMenu/ExploreMenu'
+import FoodList from '../component/FootItems/FoodList';
 
 const Home = () => {
 
@@ -10,6 +11,7 @@ const Home = () => {
     <div>
       <Header/>
       <ExploreMenu category = {category} setCategory ={setCategory} />
+      <FoodList category = {category}/>
     </div>
   )
 }
