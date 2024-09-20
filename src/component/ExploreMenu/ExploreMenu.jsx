@@ -8,7 +8,7 @@ const ExploreMenu = ({category, setCategory}) => {
             <h1 className='text-2xl text-[#262626] font-semibold'>Explore Our Menu</h1>
             <p className='max-w-[60%] text-[#4b4949]'>"Satisfy Your Cravings—Browse Our Menu and Find Your Flavor! With a diverse selection of mouthwatering dishes crafted to delight every palate</p>
         </div>
-       <div className='flex justify-between items-center gap-[30px] text-center my-[20px]'>
+       <div className='flex justify-between items-center gap-[30px] text-center my-[20px] flex-wrap'>
         {
             menu_list.map((item, index) => 
               <div key={index} onClick={() => setCategory(prev => prev === item.menu_name ? 'All' : item.menu_name)}>
