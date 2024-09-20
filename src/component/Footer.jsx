@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div className='text-[#d9d9d9] bg-[#323232] flex flex-col items-center gap-[20px] py-[20px] px-[8vw]  pt-[80px]'>
-       <div className='w-[100%] flex justify-between items-center'>
-          <div className='w-[40%] flex flex-col gap-4'>
+    <div id='contact-us-detail' className=' text-[#d9d9d9] bg-[#323232] flex flex-col items-center gap-[20px] py-[20px] px-[8vw]  pt-[80px]'>
+       <div className='flex-wrap w-[100%] flex justify-between items-center'>
+          <div className=' w-[40%] flex flex-col gap-4'>
 
             <h1 className='text-4xl font-bold text-red-500'>QuickBite</h1>
             <p>Lorem, ipsum dolor sit amet consectetur adi
