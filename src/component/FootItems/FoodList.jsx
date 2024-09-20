@@ -12,10 +12,10 @@ const FoodList = ({ category }) => {
             <h2 className='font-semibold text-2xl'>Top Dishes Near You</h2>
          </div>
 
-         <div className='flex flex-wrap gap-[30px] mt-[30px] justify-center'>
+         <div className='flex flex-wrap gap-[30px] mt-[30px] mb-[30px] justify-center'>
             {food_list.map((item) => {
                if (category === "All" || category === item.category)
-                  return <FoodCard item={item} key={item.id} />
+                  return <FoodCard item={item} key={item._id} />
             })}
          </div>
       </div>
