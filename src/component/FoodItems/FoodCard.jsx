@@ -13,8 +13,8 @@ const FoodCard = ({ item }) => {
           <img className='w-[100%] rounded-t-[15px]' src={item.image} />
         </div>
 
-        <div className='p-[10px] flex items-center justify-between '>
-          <h2 className='font-semibold text-[20px]'>{item.name}</h2>
+        <div className='p-[10px] flex items-center gap-2 justify-between '>
+          <h2 className='whitespace-nowrap text-ellipsis font-semibold text-[20px] '>{item.name}</h2>
           <img className='w-[70px]' src={assets.rating_starts} />
           {
             !cartItem[item._id] ? <img className='absolute bottom-[10.7rem] cursor-pointer right-6 ' onClick={() => AddtoCart(item._id)} src={assets.add_icon_white} /> : 
