@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { assets } from '../assets/assets'
 
 const NavBar = () => {
@@ -9,7 +9,10 @@ const NavBar = () => {
     return (
         <div>
             <nav className='flex items-center py-[20px] justify-between'>
+                <Link to='/'>
                 <h1 className='cursor-pointer flex flex-col items-center font-bold text-red-400'>QuickBite <p>Eat your Cravings</p></h1>
+                </Link>
+               
                 <div className='flex gap-[20px] text-[#49557e] text-[18px]'>
                     <NavLink to='/'>
                         Home
