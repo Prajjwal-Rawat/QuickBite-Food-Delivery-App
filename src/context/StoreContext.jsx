@@ -21,7 +21,6 @@ const StoreContextProvider = ({children}) => {
       setCartItem((prev) => ({...prev, [itemId]: prev[itemId] -1 }))
     }
     
-    console.log(cartItem);
 
     const data = {
        food_list,
