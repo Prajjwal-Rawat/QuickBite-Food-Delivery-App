@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Header from '../component/Header'
 import ExploreMenu from '../component/ExploreMenu/ExploreMenu'
-import FoodList from '../component/FootItems/FoodList';
+import FoodList from '../component/FoodItems/FoodList';
 
 const Home = () => {
 
