@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { assets } from '../assets/assets'
 import { Link } from 'react-scroll'
 
-const NavBar = () => {
+const NavBar = ({setSignUp}) => {
     
     
 
@@ -40,7 +40,8 @@ const NavBar = () => {
                         <img src={assets.basket_icon} className='w-[20px]  md:w-full' />
                         <div className='min-w-[10px] min-h-[10px] bg-red-500 rounded-full  right-[-8px] bottom-7 absolute'></div>
                     </div>
-                    <button className='py-[7px] text-[10px] px-[20px]  bg-transparent lg:text-[16px] text-[#49557e] shadow-lg lg:py-[10px] border-red-300 rounded-[50px] transition-all duration-[0.4s] border lg:px-[30px] hover:bg-[#fff4f2] active:shadow-none'>
+                    <button onClick={() => setSignUp(true)}
+                    className='py-[7px] text-[10px] px-[20px]  bg-transparent lg:text-[16px] text-[#49557e] shadow-lg lg:py-[10px] border-red-300 rounded-[50px] transition-all duration-[0.4s] border lg:px-[30px] hover:bg-[#fff4f2] active:shadow-none'>
                     Sign In
                     </button>
                 </div>
