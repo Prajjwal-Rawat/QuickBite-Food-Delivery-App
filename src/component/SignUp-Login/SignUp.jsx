@@ -34,21 +34,22 @@ const SignUp = ({setSignUp}) => {
     }
 
   return (
-    <div>
-        <form onSubmit={HandleSubmit}>
-             <div>
-                <h2>{title}</h2>
-                <img onClick={() => setSignUp(false)}
+    <div className='absolute z-10 w-full h-full bg-[#0a0a0aae] flex'>
+        <form onSubmit={HandleSubmit} className='flex flex-col w-[500px] text-[#121212c4] gap-[25px] bg-[#e0cfcf94] py-[25px] px-[30px] rounded-[8px] text-[14px] justify-center m-auto'>
+             <div className='flex justify-between'>
+                <h2 className='text-2xl font-bold underline text-black'>{title}</h2>
+                <img className='w-[30px] h-[30px] cursor-pointer hover:bg-white rounded-full p-2' onClick={() => setSignUp(false)}
                 src={assets.cross_icon}/>
              </div>
-
-             <div>
+             
+             
+             <div className={`${title === 'Sign Up' ? 'flex flex-col gap-1' : 'hidden'}`}>
                 
-                <label htmlFor="Name">Enter Your Name:</label>
-                <input
+                <label htmlFor="Name" className='text-[17px] font-semibold'>Enter Your Name:</label>
+                <input className='w-full p-3 rounded-[8px] bg-slate-700 text-white'
                 required 
                 type="text"
-                placeholder='Your Name'
+                placeholder='Your name'
                 name='Name'
                 id='Name'
                 onChange={HandleChange}
@@ -56,13 +57,13 @@ const SignUp = ({setSignUp}) => {
 
              </div>
 
-             <div>
+             <div className='flex flex-col gap-1'>
                 
-               <label htmlFor="Email">Enter Your Email:</label>
-                <input
+               <label htmlFor="Email" className='text-[17px] font-semibold'>Enter Your Email:</label>
+                <input className='w-full p-3 rounded-[8px] bg-slate-700 text-white'
                 required 
                 type='email'
-                placeholder='Your Email'
+                placeholder='Your email'
                 name='Email'
                 id='Email'
                 onChange={HandleChange}
@@ -70,10 +71,10 @@ const SignUp = ({setSignUp}) => {
 
              </div>
 
-             <div>
+             <div className='flex flex-col gap-1'>
 
-               <label htmlFor="password">Enter Password:</label>
-                <input
+               <label htmlFor="password" className='text-[17px] font-semibold'>Enter Password:</label>
+                <input className='w-full p-3 rounded-[8px] bg-slate-700 text-white'
                 required 
                 type='password'
                 placeholder='Password'
@@ -84,9 +85,9 @@ const SignUp = ({setSignUp}) => {
 
              </div>
 
-             <button> {title === 'Sign Up' ? "Create Account" : "Login" } </button>
+             <button className='bg-yellow-300 hover:shadow-lg text-black hover:bg-yellow-400  active:scale-95 active:shadow-none py-2 rounded-[8px] font-semibold text-[17px]'> {title === 'Sign Up' ? "Create Account" : "Login" } </button>
 
-             <div>
+             <div className='flex gap-2'>
                 <input type='checkbox'
                 required 
                 name="policy" 
@@ -97,7 +98,7 @@ const SignUp = ({setSignUp}) => {
                 <label htmlFor="checkbox">By continuing, I agree to the terms of use & privacy policy.</label>
              </div>
 
-             <p>{title === 'Sign Up' ? "Already have account?" : "Create a new account? "} <span onClick={ToggleTitle}>Click Here</span> </p>
+             <p className='text-[15px]'>{title === 'Sign Up' ? "Already have account?" : "Create a new account? "} <span className='font-bold cursor-pointer' onClick={ToggleTitle}>Click Here</span> </p>
         </form>
     </div>
   )
