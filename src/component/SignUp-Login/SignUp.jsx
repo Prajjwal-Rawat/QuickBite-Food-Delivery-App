@@ -34,7 +34,7 @@ const SignUp = ({setSignUp}) => {
     }
 
   return (
-    <div className='absolute z-10 w-full h-full bg-[#0a0a0aae] flex'>
+    <div className='fixed z-10 w-full h-full bg-[#0a0a0aae] flex'>
         <form onSubmit={HandleSubmit} className='flex flex-col w-[500px] text-[#121212c4] gap-[25px] bg-[#e0cfcf94] py-[25px] px-[30px] rounded-[8px] text-[14px] justify-center m-auto'>
              <div className='flex justify-between'>
                 <h2 className='text-2xl font-bold underline text-black'>{title}</h2>

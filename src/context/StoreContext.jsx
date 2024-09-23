@@ -6,27 +6,52 @@ export const StoreContext = createContext();
 
 const StoreContextProvider = ({children}) => {
    
-    const [cartItem, setCartItem] = useState({});
+  const [cartItem, setCartItem] = useState({});
 
+  const AddtoCart = (itemId) => {
+    setCartItem((prev) => ({
+      ...prev,
+      [itemId] : (prev[itemId] || 0) + 1
+    }))
+  };
+
+
+  
+  const RemoveItem = (itemId) => {
+    setCartItem((prev) => {
+      const updatedCart = { ...prev };
+  
+      if (updatedCart[itemId] > 1) {
+        updatedCart[itemId] -= 1;
+      } else {
+        delete updatedCart[itemId]; 
+      }
+
+      return updatedCart;
+    });
     
-    const AddtoCart =(itemId) => {
-      if(!cartItem[itemId]){
-          setCartItem((prev) => ({...prev, [itemId]: 1}))
-      }else{
-        setCartItem((prev) => ({...prev, [itemId]: prev[itemId]+1}))
+  };
+
+
+  function CartTotalAmount(){
+    let totalAmount = 0;
+
+    for(const item in cartItem){
+      if(cartItem[item] > 0){
+        let product = food_list.find((prod) => prod._id === item);
+        totalAmount += product.price * cartItem[item];
       }
     }
-
-    const RemoveItem = (itemId) => {
-      setCartItem((prev) => ({...prev, [itemId]: prev[itemId] -1 }))
-    }
+    return totalAmount;
+  }
     
 
     const data = {
        food_list,
        cartItem,
        AddtoCart,
-       RemoveItem
+       RemoveItem,
+       CartTotalAmount
     }
 
       return(
