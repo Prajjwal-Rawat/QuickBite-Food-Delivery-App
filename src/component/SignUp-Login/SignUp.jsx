@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { assets } from '../../assets/assets';
 
-const SignUp = ({setSignUp}) => {
+const SignUp = ({setSignUp, setIsLoggedIn}) => {
 
     const [title, setTitle] = useState('Sign Up');
     const [formData, setFormData] = useState({Name: '', Email: '', password: '', policy: false});
+
+    
 
 
     function ToggleTitle(){
@@ -31,6 +33,10 @@ const SignUp = ({setSignUp}) => {
         event.preventDefault();
 
         console.log('Form Details are saved');
+        
+        setIsLoggedIn(true);
+        setSignUp(false);
+
     }
 
   return (

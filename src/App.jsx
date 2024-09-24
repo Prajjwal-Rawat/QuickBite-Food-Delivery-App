@@ -11,19 +11,21 @@ const App = () => {
 
   const [signUp, setSignUp] = useState(false);
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <div className='flex flex-col min-h-screen'>
         
-       {signUp ? <SignUp setSignUp = {setSignUp}/> : <></>} 
+       {signUp ? <SignUp setSignUp = {setSignUp} setIsLoggedIn = {setIsLoggedIn}/> : <></>} 
 
       <div className='w-[80%] m-auto flex-grow'>
 
-      <NavBar setSignUp = {setSignUp}/>
+      <NavBar setSignUp = {setSignUp} isLoggedIn = {isLoggedIn} setIsLoggedIn = {setIsLoggedIn} />
 
       <Routes>
         <Route path='/' element = {<Home/>}/>
         <Route path='/cart' element = {<Cart/>}/>
-        <Route path='/order' element = {<PlaceOrder/>}/>
+        <Route path='/checkout' element = {<PlaceOrder/>}/>
       </Routes>
 
       </div>

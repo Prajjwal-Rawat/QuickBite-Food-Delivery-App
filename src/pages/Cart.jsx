@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../context/StoreContext'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Cart = () => {
 
        
   const { food_list, cartItem, RemoveItem, CartTotalAmount } = useContext(StoreContext);
 
-
+  const navigate =useNavigate();
 
   if (Object.keys(cartItem).length <= 0) {
     return (
@@ -31,9 +31,9 @@ const Cart = () => {
   }
 
   return (
-    <div className='lg:m-[50px] m-[20px]'>
+    <div className='lg:m-[50px] mt-[30px] mb-[30px]'>
 
-      <div className=' grid'>
+      <div>
 
         <div className='grid grid-flow-col grid-cols-5  ml-[10px] text-gray-400'>
           <p>Item</p>
@@ -85,7 +85,10 @@ const Cart = () => {
               <p>Total</p>
               <p>${CartTotalAmount() + 20}</p>
             </div>
-            <button className='bg-red-500 p-2 rounded-md w-[200px] lg:w-[300px] mt-3 text-white font-bold shadow-md active:shadow-none shadow-black'>Proceed To Checkout</button>
+            <button onClick={() => navigate('/checkout')} 
+            className='bg-red-500 p-2 rounded-md w-[200px] lg:w-[300px] mt-3 text-white font-bold shadow-md active:shadow-none shadow-black'>
+            Proceed To Checkout
+            </button>
 
           </div>
 
